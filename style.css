@@ -1,0 +1,746 @@
+/* ==========================================================
+   MY LAB DESK
+   Phase 1
+========================================================== */
+
+:root{
+
+    --bg:#f8f6f1;
+
+    --green:#d9ead3;
+    --green-dark:#bdddb4;
+
+    --pink:#f7d9df;
+    --pink-dark:#efc4cf;
+
+    --cream:#fffdf8;
+
+    --white:#ffffff;
+
+    --shadow:0 10px 25px rgba(0,0,0,.08);
+
+    --radius:22px;
+
+    --header:72px;
+    --footer:42px;
+
+    --transition:.18s;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        180deg,
+        #fbfaf7,
+        #f3f1ec
+    );
+
+    font-family:'Quicksand',sans-serif;
+
+}
+
+body{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+#desktop{
+
+    width:min(96vw,1440px);
+
+    aspect-ratio:16/9;
+
+    background:var(--bg);
+
+    border-radius:30px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.15);
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+#topBar{
+
+    height:var(--header);
+
+    background:
+
+    linear-gradient(
+        90deg,
+        var(--green),
+        var(--pink)
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 28px;
+
+}
+
+.title{
+
+    font-family:'Patrick Hand',cursive;
+
+    font-size:2rem;
+
+    color:#444;
+
+}
+
+#clock{
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    color:#555;
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+#bottomBar{
+
+    height:var(--footer);
+
+    background:#efe9df;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#666;
+
+    font-size:.9rem;
+
+}
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+#workspace{
+
+    flex:1;
+
+    padding:18px;
+
+    display:grid;
+
+    gap:18px;
+
+    grid-template-columns:
+
+        1.3fr
+        1fr
+        1fr;
+
+    grid-template-rows:
+
+        1fr
+        1fr;
+
+}
+
+
+/* ==========================================================
+   PANEL
+========================================================== */
+
+.panel{
+
+    background:var(--cream);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    transition:.2s;
+
+}
+
+.panel:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.panelHeader{
+
+    background:var(--green);
+
+    padding:12px 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.stickyPanel .panelHeader{
+
+    background:var(--pink);
+
+}
+
+.panelHeader h2{
+
+    font-family:'Patrick Hand',cursive;
+
+    font-size:1.6rem;
+
+    color:#444;
+
+}
+
+.panelBody{
+
+    flex:1;
+
+    overflow:auto;
+
+    padding:16px;
+
+}
+
+
+/* nice scrollbar */
+
+.panelBody::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.panelBody::-webkit-scrollbar-thumb{
+
+    background:#d8d8d8;
+
+    border-radius:20px;
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.addButton{
+
+    width:34px;
+    height:34px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:white;
+
+    font-size:1.2rem;
+
+    transition:var(--transition);
+
+    box-shadow:
+
+        0 4px 10px rgba(0,0,0,.08);
+
+}
+
+.addButton:hover{
+
+    transform:scale(1.08);
+
+}
+
+.deleteButton,
+.deleteSticky,
+.deleteDeadline,
+.deleteError,
+.deleteGroup{
+
+    width:30px;
+    height:30px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:#ffd7d7;
+
+    transition:.15s;
+
+}
+
+.deleteButton:hover,
+.deleteSticky:hover,
+.deleteDeadline:hover,
+.deleteError:hover,
+.deleteGroup:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+/* ==========================================================
+   INPUTS
+========================================================== */
+
+input,
+textarea{
+
+    font-family:'Quicksand',sans-serif;
+
+    border:none;
+
+    outline:none;
+
+    background:#fff;
+
+    border-radius:12px;
+
+    padding:8px 10px;
+
+}
+
+input[type="text"]{
+
+    width:100%;
+
+}
+
+textarea{
+
+    resize:none;
+
+}
+/* ==========================================================
+   TASKS
+========================================================== */
+
+#taskList{
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+
+}
+
+.taskItem{
+
+    display:grid;
+
+    grid-template-columns:
+        28px
+        1fr
+        130px
+        34px;
+
+    gap:10px;
+
+    align-items:center;
+
+    padding:10px;
+
+    border-radius:16px;
+
+    background:white;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.05);
+
+}
+
+.taskItem input[type="checkbox"]{
+
+    width:20px;
+    height:20px;
+
+    accent-color:#9acb8d;
+
+}
+
+.taskText{
+
+    font-size:.95rem;
+
+}
+
+.taskDate{
+
+    text-align:center;
+
+}
+
+/* ==========================================================
+   STICKY NOTES
+========================================================== */
+
+#stickyContainer{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fill,minmax(180px,1fr));
+
+    gap:14px;
+
+}
+
+.sticky{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    min-height:170px;
+
+    padding:14px;
+
+    background:#fff6b8;
+
+    border-radius:18px;
+
+    box-shadow:
+        4px 6px 14px rgba(0,0,0,.08);
+
+    transform:rotate(-1deg);
+
+    transition:.15s;
+
+}
+
+.sticky:nth-child(even){
+
+    background:#ffe6ef;
+
+    transform:rotate(1deg);
+
+}
+
+.sticky:nth-child(3n){
+
+    background:#e7f7d9;
+
+    transform:rotate(-2deg);
+
+}
+
+.sticky:hover{
+
+    transform:scale(1.02) rotate(0deg);
+
+}
+
+.sticky textarea{
+
+    flex:1;
+
+    background:transparent;
+
+    border:none;
+
+    font-size:.95rem;
+
+}
+
+.stickyDate{
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   DEADLINES
+========================================================== */
+
+#deadlineList{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.deadlineItem{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        130px
+        34px;
+
+    gap:10px;
+
+    align-items:center;
+
+    background:white;
+
+    border-radius:14px;
+
+    padding:10px;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.05);
+
+}
+
+/* ==========================================================
+   ERRORS
+========================================================== */
+
+#errorList{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.errorItem{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    padding:14px;
+
+    background:#fff;
+
+    border-radius:16px;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.05);
+
+}
+
+.errorItem textarea{
+
+    min-height:80px;
+
+}
+
+.errorItem button{
+
+    align-self:flex-end;
+
+}
+
+/* ==========================================================
+   PROJECT GROUPS
+========================================================== */
+
+#groupList{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.groupItem{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    padding:14px;
+
+    background:white;
+
+    border-radius:16px;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.05);
+
+}
+
+.groupItem textarea{
+
+    min-height:80px;
+
+}
+
+/* ==========================================================
+   QUICK NOTES
+========================================================== */
+
+#quickNotes{
+
+    width:100%;
+    height:100%;
+
+    background:#fff;
+
+    font-size:1rem;
+
+    line-height:1.5;
+
+}
+
+/* ==========================================================
+   PLACEHOLDERS
+========================================================== */
+
+::placeholder{
+
+    color:#999;
+
+}
+
+/* ==========================================================
+   FOCUS STATES
+========================================================== */
+
+input:focus,
+textarea:focus{
+
+    box-shadow:
+        inset 0 0 0 2px #d9ead3;
+
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes pop{
+
+    from{
+
+        transform:scale(.92);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+        opacity:1;
+
+    }
+
+}
+
+.taskItem,
+.deadlineItem,
+.errorItem,
+.groupItem,
+.sticky{
+
+    animation:pop .18s ease-out;
+
+}
+
+/* ==========================================================
+   SMALL SCREENS
+========================================================== */
+
+@media (max-width:1200px){
+
+    #workspace{
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+        grid-template-rows:
+            repeat(3,1fr);
+
+    }
+
+}
+
+@media (max-width:900px){
+
+    #desktop{
+
+        width:100vw;
+        height:100vh;
+
+        aspect-ratio:auto;
+
+        border-radius:0;
+
+    }
+
+    #workspace{
+
+        grid-template-columns:1fr;
+
+        grid-template-rows:none;
+
+        overflow:auto;
+
+    }
+
+}
