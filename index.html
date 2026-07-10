@@ -1,346 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
 
-    <title>My Lab Desk</title>
+<meta charset="UTF-8">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<title>My Lab Desk</title>
 
-    <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
 <div id="desktop">
 
-    <!-- Header -->
 
-    <header id="topBar">
+<header id="topBar">
 
-        <div class="title">
-            🌸 My Lab Desk
-        </div>
-
-        <div id="clock">
-            --:--
-        </div>
-
-    </header>
-
-    <!-- Main Grid -->
-
-    <main id="workspace">
-
-        <!-- TASKS -->
-
-        <section class="panel taskLarge" id="tasksPanel">
-            <div class="panelHeader">
-
-                <h2>✅ Tasks</h2>
-
-                <button class="addButton"
-                        id="addTaskButton">
-                    +
-                </button>
-
-            </div>
-
-            <div class="panelBody">
-
-                <div id="taskList">
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- STICKY NOTES -->
-
-        <section class="panel stickyPanel">
-
-            <div class="panelHeader">
-
-                <h2>📝 Sticky Notes</h2>
-
-                <button class="addButton"
-                        id="addStickyButton">
-                    +
-                </button>
-
-            </div>
-
-            <div class="panelBody">
-
-                <div id="stickyContainer">
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- DEADLINES -->
-
-        <section class="panel">
-
-            <div class="panelHeader">
-
-                <h2>📅 Deadlines</h2>
-
-                <button class="addButton"
-                        id="addDeadlineButton">
-                    +
-                </button>
-
-            </div>
-
-            <div class="panelBody">
-
-                <div id="deadlineList">
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-      <!-- BOTTOM ROW -->
-    
-<div class="bottomRow">
-    
-    
-    <section class="panel">
-    
-        <div class="panelHeader">
-    
-            <h2>⚠ Error Codes</h2>
-    
-            <button class="addButton"
-                    id="addErrorButton">
-                +
-            </button>
-    
-        </div>
-    
-        <div class="panelBody">
-    
-            <div id="errorList"></div>
-    
-        </div>
-    
-    </section>
-    
-    
-    
-    <section class="panel">
-    
-        <div class="panelHeader">
-    
-            <h2>📅 Deadlines</h2>
-    
-            <button class="addButton"
-                    id="addDeadlineButton">
-                +
-            </button>
-    
-        </div>
-    
-        <div class="panelBody">
-    
-            <div id="deadlineList"></div>
-    
-        </div>
-    
-    </section>
-    
-    
-    
-    <section class="panel">
-    
-        <div class="panelHeader">
-    
-            <h2>📂 Projects</h2>
-    
-            <button class="addButton"
-                    id="addGroupButton">
-                +
-            </button>
-    
-        </div>
-    
-        <div class="panelBody">
-    
-            <div id="groupList"></div>
-    
-        </div>
-    
-    </section>
-    
-    
+    <div class="title">
+        🌸 My Lab Desk
     </div>
 
 
+    <div id="clock">
+        --:--
+    </div>
 
-    </main>
+
+</header>
 
 
-    <!-- Footer -->
 
-    <footer id="bottomBar">
+<main id="workspace">
 
-        <div>
 
-            Everything saves automatically ✔
+<!-- =========================
+        TASKS
+========================= -->
 
-        </div>
 
-    </footer>
+<section class="panel taskLarge" id="tasksPanel">
+
+
+<div class="panelHeader">
+
+<h2>
+✅ Tasks
+</h2>
+
+
+<button class="addButton"
+id="addTaskButton">
++
+</button>
+
 
 </div>
 
 
-<!-- Templates -->
+<div class="panelBody">
+
+<div id="taskList"></div>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- =========================
+        STICKY NOTES
+========================= -->
+
+
+<section class="panel stickyPanel">
+
+
+<div class="panelHeader">
+
+
+<h2>
+📝 Sticky Notes
+</h2>
+
+
+<button class="addButton"
+id="addStickyButton">
++
+</button>
+
+
+</div>
+
+
+
+<div class="panelBody">
+
+<div id="stickyContainer"></div>
+
+</div>
+
+
+</section>
+
+<!-- =========================
+        BOTTOM ROW
+========================= -->
+
+
+<div class="bottomRow">
+
+
+
+<!-- ERROR CODES -->
+
+<section class="panel">
+
+
+<div class="panelHeader">
+
+<h2>
+⚠ Error Codes
+</h2>
+
+
+<button class="addButton"
+id="addErrorButton">
++
+</button>
+
+
+</div>
+
+
+
+<div class="panelBody">
+
+<div id="errorList"></div>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- DEADLINES -->
+
+<section class="panel">
+
+
+<div class="panelHeader">
+
+<h2>
+📅 Deadlines
+</h2>
+
+
+<button class="addButton"
+id="addDeadlineButton">
++
+</button>
+
+
+</div>
+
+
+
+<div class="panelBody">
+
+<div id="deadlineList"></div>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- PROJECTS -->
+
+<section class="panel">
+
+
+<div class="panelHeader">
+
+<h2>
+📂 Projects
+</h2>
+
+
+<button class="addButton"
+id="addGroupButton">
++
+</button>
+
+
+</div>
+
+
+
+<div class="panelBody">
+
+<div id="groupList"></div>
+
+</div>
+
+
+</section>
+
+
+
+</div>
+
+
+
+</main>
+
+
+
+
+
+<footer id="bottomBar">
+
+<div>
+
+Everything saves automatically ✔
+
+</div>
+
+</footer>
+
+
+
+</div>
+
+    
+<!-- =========================
+        TEMPLATES
+========================= -->
 
 
 <template id="taskTemplate">
 
-    <div class="taskItem">
 
-        <input
-            type="checkbox"
-            class="taskCheck">
+<div class="taskItem">
 
-        <input
-            type="text"
-            class="taskText"
-            placeholder="New task...">
 
-        <input
-            type="date"
-            class="taskDate">
+<input
+type="checkbox"
+class="taskCheck">
 
-        <button class="deleteButton">
 
-            ✕
 
-        </button>
+<input
+type="text"
+class="taskText"
+placeholder="New task...">
 
-    </div>
+
+
+<input
+type="date"
+class="taskDate">
+
+
+
+<button class="deleteButton">
+✕
+</button>
+
+
+
+</div>
+
 
 </template>
+
+
 
 
 
 <template id="stickyTemplate">
 
-    <div class="sticky">
 
-        <textarea
-            placeholder="Write note..."></textarea>
+<div class="sticky">
 
-        <input
-            type="date"
-            class="stickyDate">
 
-        <button class="deleteSticky">
+<textarea
+placeholder="Write note..."></textarea>
 
-            ✕
 
-        </button>
 
-    </div>
+<input
+type="date"
+class="stickyDate">
+
+
+
+<button class="deleteSticky">
+
+✕
+
+</button>
+
+
+</div>
+
 
 </template>
+
+
+
 
 
 
 <template id="deadlineTemplate">
 
-    <div class="deadlineItem">
 
-        <input
-            type="text"
-            placeholder="Deadline">
+<div class="deadlineItem">
 
-        <input
-            type="date">
 
-        <button class="deleteDeadline">
+<input
+type="text"
+placeholder="Deadline">
 
-            ✕
 
-        </button>
 
-    </div>
+<input
+type="date">
+
+
+
+<button class="deleteDeadline">
+
+✕
+
+</button>
+
+
+
+</div>
+
 
 </template>
+
+
+
 
 
 
 <template id="errorTemplate">
 
-    <div class="errorItem">
 
-        <input
-            type="text"
-            placeholder="Error title">
+<div class="errorItem">
 
-        <textarea
-            placeholder="Describe issue..."></textarea>
 
-        <input
-            type="date">
+<input
+type="text"
+placeholder="Error title">
 
-        <button class="deleteError">
 
-            ✕
 
-        </button>
+<textarea
+placeholder="Describe issue..."></textarea>
 
-    </div>
+
+
+<input
+type="date">
+
+
+
+<button class="deleteError">
+
+✕
+
+</button>
+
+
+
+</div>
+
 
 </template>
+
+
+
 
 
 
 <template id="groupTemplate">
 
-    <div class="groupItem">
 
-        <input
-            type="text"
-            placeholder="Project name">
+<div class="groupItem">
 
-        <textarea
-            placeholder="Tasks..."></textarea>
 
-        <input
-            type="date">
+<input
+type="text"
+placeholder="Project name">
 
-        <button class="deleteGroup">
 
-            ✕
 
-        </button>
+<textarea
+placeholder="Tasks..."></textarea>
 
-    </div>
+
+
+<input
+type="date">
+
+
+
+<button class="deleteGroup">
+
+✕
+
+</button>
+
+
+
+</div>
+
 
 </template>
 
 
 
+
+
 <script src="script.js"></script>
 
+
 </body>
+
+
 </html>
