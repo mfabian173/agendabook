@@ -175,14 +175,41 @@ body{
 
     grid-template-columns:
 
-        1.3fr
-        1fr
+        2fr
         1fr;
 
     grid-template-rows:
 
-        1fr
+        2fr
         1fr;
+
+}
+/* MAIN TASK AREA */
+
+.taskLarge{
+
+    grid-row:
+
+        span 2;
+
+}
+
+
+/* BOTTOM ROW */
+
+.bottomRow{
+
+    grid-column:
+
+        1 / 3;
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(3,1fr);
+
+    gap:18px;
 
 }
 
