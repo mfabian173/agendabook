@@ -10,8 +10,7 @@ const state = {
     stickies: [],
     deadlines: [],
     errors: [],
-    groups: [],
-    quickNotes: ""
+    groups: []
 };
 
 /* ==========================================================
@@ -23,7 +22,6 @@ const stickyContainer = document.getElementById("stickyContainer");
 const deadlineList = document.getElementById("deadlineList");
 const errorList = document.getElementById("errorList");
 const groupList = document.getElementById("groupList");
-const quickNotes = document.getElementById("quickNotes");
 
 const clock = document.getElementById("clock");
 
@@ -52,8 +50,6 @@ updateClock();
 
 function save(){
 
-    state.quickNotes = quickNotes.value;
-
     localStorage.setItem(
         STORAGE_KEY,
         JSON.stringify(state)
@@ -79,7 +75,6 @@ function load(){
     state.deadlines = data.deadlines || [];
     state.errors = data.errors || [];
     state.groups = data.groups || [];
-    state.quickNotes = data.quickNotes || "";
 
     renderAll();
 
@@ -96,8 +91,6 @@ function renderAll(){
     renderDeadlines();
     renderErrors();
     renderGroups();
-
-    quickNotes.value = state.quickNotes;
 
 }
 
@@ -267,7 +260,6 @@ document
    AUTO SAVE NOTES
 ========================================================== */
 
-quickNotes.oninput = save;
 /* ==========================================================
    DEADLINES
 ========================================================== */
