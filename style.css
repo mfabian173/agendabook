@@ -161,35 +161,32 @@ body{
 
 /* ==========================================================
    GRID
-========================================================== */
-
+=====================*/
 #workspace{
 
     flex:1;
 
-    padding:18px;
-
     display:grid;
+
+    padding:18px;
 
     gap:18px;
 
     grid-template-columns:
-
         2fr
         1fr;
 
     grid-template-rows:
-
-        2fr
-        1fr;
+        1fr
+        220px;
 
 }
-/* MAIN TASK AREA */
-
 
 .taskLarge{
 
-    grid-row:2;
+    grid-column:1;
+
+    grid-row:1 / span 2;
 
 }
 
