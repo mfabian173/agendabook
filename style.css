@@ -66,16 +66,15 @@ body{
 /* ==========================================================
    DESKTOP
 ========================================================== */
-
 #desktop{
 
-    width:min(96vw,1440px);
+    width:min(99vw,1650px);
 
-    aspect-ratio:16/9;
+    height:min(95vh,950px);
+
+    border-radius:34px;
 
     background:var(--bg);
-
-    border-radius:30px;
 
     box-shadow:
         0 25px 60px rgba(0,0,0,.15);
@@ -168,15 +167,17 @@ body{
 
     display:grid;
 
-    padding:18px;
+    padding:22px;
 
-    gap:18px;
+    gap:22px;
 
     grid-template-columns:
-        2fr
-        1fr;
+
+        2.4fr
+        1.2fr;
 
     grid-template-rows:
+
         1fr
         220px;
 
@@ -219,21 +220,25 @@ body{
 
 .panel{
 
-    background:var(--cream);
+    background:#fffefb;
 
-    border-radius:var(--radius);
+    border-radius:28px;
 
-    box-shadow:var(--shadow);
+    overflow:hidden;
 
     display:flex;
 
     flex-direction:column;
 
-    overflow:hidden;
+    box-shadow:
 
-    transition:.2s;
+        0 12px 28px rgba(0,0,0,.10);
+
+    transition:.18s;
 
 }
+
+
 
 .panel:hover{
 
@@ -260,14 +265,13 @@ body{
     background:var(--pink);
 
 }
-
 .panelHeader h2{
+
+    font-size:2rem;
 
     font-family:'Patrick Hand',cursive;
 
-    font-size:1.6rem;
-
-    color:#444;
+    letter-spacing:.5px;
 
 }
 
@@ -283,21 +287,44 @@ body{
 
 
 /* nice scrollbar */
-
 .panelBody::-webkit-scrollbar{
 
-    width:8px;
+    width:12px;
+
+}
+
+.panelBody::-webkit-scrollbar-track{
+
+    background:#f8f3eb;
+
+    border-radius:30px;
 
 }
 
 .panelBody::-webkit-scrollbar-thumb{
 
-    background:#d8d8d8;
+    background:#d9ead3;
 
-    border-radius:20px;
+    border-radius:30px;
 
 }
 
+.panelBody::-webkit-scrollbar-thumb:hover{
+
+    background:#c3d9ba;
+
+}
+.panelBody{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding:18px;
+
+}
 
 /* ==========================================================
    BUTTONS
@@ -426,7 +453,17 @@ textarea{
 
     border-radius:16px;
 
-    background:white;
+    background:
+
+   repeating-linear-gradient(
+
+   white,
+   
+   white 30px,
+
+   #eef5ff 31px
+
+   );
 
     box-shadow:
         0 3px 10px rgba(0,0,0,.05);
@@ -481,12 +518,17 @@ textarea{
 
     padding:14px;
 
-    background:#fff6b8;
+    background:#fff6a8;
 
-    border-radius:18px;
+    min-height:210px;
+
+    padding:18px;
+
+    border-radius:6px;
 
     box-shadow:
-        4px 6px 14px rgba(0,0,0,.08);
+
+        4px 8px 16px rgba(0,0,0,.12);
 
     transform:rotate(-1deg);
 
